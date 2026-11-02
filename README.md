@@ -41,7 +41,6 @@ Aşağıdaki değerler repository'deki **`experiment_1.csv` MLflow dışa aktar�
 | `requirements.txt` | Gerekli Python paketleri |
 | `MLFLOW.md` | MLflow'un başlatılması, deneylerin anlamı ve sınırlamalar |
 | `.gitignore` | Yerel / geçici dosyalar için ignore kuralları |
-| `presentations/Akromegali_Mortalite_Sunum.pdf` | Projenin 12 slaytlık PDF sonuç sunumu |
 | `global_feature_importance.png` | Lojistik regresyon genel katsayı görseli |
 | `model_comparison_cv.png` | Tekrarlı CV model karşılaştırma görseli |
 
@@ -67,7 +66,7 @@ python run_project.py --no-mlflow
 
 Bu komut `results/` klasörüne analiz çıktıları üretir. Notebook'u incelemek için `jupyter notebook` komutunu çalıştırıp `Akromegali_Modelleme.ipynb` dosyasını açın. Notebook'un bazı hücreleri önceden oluşturulmuş çıktılar veya çalışan yerel MLflow sunucusu gerektirebilir; bütün hücrelerin temiz ortamda baştan sona çalıştığı henüz doğrulanmamıştır.
 
-Sunumun teslim formatı **PDF** olarak belirlendi. [Akromegali Mortalite Sunumu (PDF)](presentations/Akromegali_Mortalite_Sunum.pdf) dosyası `presentations/` klasöründedir; canlı Notebook kaldırılmıştır.
+Sunumun teslim formatı **PDF** olarak belirlendi. Güncellenmiş kapak sayfası (Selin Ünsal 25531116 ve Ceren Zorbozan 25531105) içeren PDF'nin `presentations/Akromegali_Mortalite_Sunum.pdf` yoluna yüklenmesi bekleniyor.
 
 **Grafikler:** [Tekrarlı CV karşılaştırması](model_comparison_cv.png) · [Global feature importance](global_feature_importance.png).
 
@@ -95,6 +94,6 @@ Sağlık verileri hassastır. Repository herkese açıksa kaynak veri, dışa ak
 
 - Çalıştırılabilir analiz: `run_project.py` ve `Akromegali_Modelleme.ipynb` depoda mevcut.
 - Veri / kaydedilmiş deney özeti: `akromegali_alistirma.csv`, `experiment_1.csv` ve `reports/` mevcut.
-- Sunum: `presentations/Akromegali_Mortalite_Sunum.pdf` yüklendi. Eski canlı sunum kaldırıldı.
+- Sunum: düzeltilmiş PDF'nin `presentations/Akromegali_Mortalite_Sunum.pdf` yoluna yüklenmesi bekleniyor; önceki sürüm kaldırıldı.
 - Tekrar üretilebilirlik: özgün yerel ortamda sonuçlar kontrol edilmiştir; bağımsız temiz bilgisayarda uçtan uca çalıştırma henüz doğrulanmamıştır.
 - Gizlilik: herkese açık sağlık verisi paylaşım yetkisi ve kimlik gizleme gözden geçirilmelidir.
