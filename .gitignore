@@ -1,0 +1,21 @@
+# Python / Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.venv/
+venv/
+.env
+
+# Recreated outputs and MLflow artifacts
+results/
+mlruns/
+mlartifacts/
+mlflow.db
+*.db-journal
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
