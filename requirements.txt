@@ -4,5 +4,6 @@ scipy
 scikit-learn
 matplotlib
 mlflow
+skops
 jupyter
 notebook
