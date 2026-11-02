@@ -41,6 +41,9 @@ Aşağıdaki değerler repository'deki **`experiment_1.csv` MLflow dışa aktar�
 | `requirements.txt` | Gerekli Python paketleri |
 | `MLFLOW.md` | MLflow'un başlatılması, deneylerin anlamı ve sınırlamalar |
 | `.gitignore` | Yerel / geçici dosyalar için ignore kuralları |
+| `docs/reproducibility.md` | Veri sözleşmesi, veri sızıntısı ve metot sınırları |
+| `reports/cv_summary_from_mlflow.csv` | Kaydedilmiş tekrar CV metrikleri (MLflow özetinden) |
+| `reports/test_summary_from_mlflow.csv` | Kaydedilmiş test metrikleri (MLflow özetinden) |
 
 ## Kurulum ve yeniden çalıştırma
 
@@ -59,6 +62,8 @@ python run_project.py --no-mlflow
 ```
 
 Bu komut `results/` klasörüne analiz çıktıları üretir. Notebook'u incelemek için `jupyter notebook` komutunu çalıştırıp `Akromegali_Modelleme.ipynb` dosyasını açın. Notebook'un bazı hücreleri önceden oluşturulmuş çıktılar veya çalışan yerel MLflow sunucusu gerektirebilir; bütün hücrelerin temiz ortamda baştan sona çalıştığı henüz doğrulanmamıştır.
+
+Yöntem ve veri kalite kontrolleri: [Tekrar üretilebilirlik notları](docs/reproducibility.md). Karşılaştırma tabloları: [CV metrikleri](reports/cv_summary_from_mlflow.csv) ve [test metrikleri](reports/test_summary_from_mlflow.csv).
 
 MLflow kullanmak için bkz. [MLFLOW.md](MLFLOW.md). **`experiment_1.csv` bir sonuç dışa aktarımıdır; sunucu veritabanı ya da eğitilmiş model dosyası değildir.**
 
