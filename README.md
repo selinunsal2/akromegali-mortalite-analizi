@@ -43,8 +43,6 @@ Aşağıdaki değerler repository'deki **`experiment_1.csv` MLflow dışa aktar�
 | `.gitignore` | Yerel / geçici dosyalar için ignore kuralları |
 | `global_feature_importance.png` | Lojistik regresyon genel katsayı görseli |
 | `model_comparison_cv.png` | Tekrarlı CV model karşılaştırma görseli |
-| `presentations/Akromegali_Canli_Sunum.ipynb` | 12 slaytlık, çalıştırılabilir JupyterLab sunumu |
-| `presentations/README.md` | RISE / HTML dışa aktarma ve PDF durumu |
 
 | `docs/reproducibility.md` | Veri sözleşmesi, veri sızıntısı ve metot sınırları |
 | `reports/cv_summary_from_mlflow.csv` | Kaydedilmiş tekrar CV metrikleri (MLflow özetinden) |
@@ -68,7 +66,7 @@ python run_project.py --no-mlflow
 
 Bu komut `results/` klasörüne analiz çıktıları üretir. Notebook'u incelemek için `jupyter notebook` komutunu çalıştırıp `Akromegali_Modelleme.ipynb` dosyasını açın. Notebook'un bazı hücreleri önceden oluşturulmuş çıktılar veya çalışan yerel MLflow sunucusu gerektirebilir; bütün hücrelerin temiz ortamda baştan sona çalıştığı henüz doğrulanmamıştır.
 
-Sunum için [çalıştırılabilir 12 slaytlık Jupyter Notebook](presentations/Akromegali_Canli_Sunum.ipynb) ve [sunum kullanım notları](presentations/README.md) mevcuttur. **Sabit PDF dosyası henüz GitHub'a yüklenmemiştir**; yüklenene kadar tam teslim paketinde varmış gibi gösterilmemelidir.
+Sunumun teslim formatı **PDF** olarak belirlendi. `presentations/` klasöründeki canlı Notebook kaldırıldı. `Akromegali_Mortalite_Sunum.pdf` dosyası henüz GitHub'a yüklenmedi; klasör PDF yüklenince oluşacaktır.
 
 **Grafikler:** [Tekrarlı CV karşılaştırması](model_comparison_cv.png) · [Global feature importance](global_feature_importance.png).
 
@@ -96,7 +94,6 @@ Sağlık verileri hassastır. Repository herkese açıksa kaynak veri, dışa ak
 
 - Çalıştırılabilir analiz: `run_project.py` ve `Akromegali_Modelleme.ipynb` depoda mevcut.
 - Veri / kaydedilmiş deney özeti: `akromegali_alistirma.csv`, `experiment_1.csv` ve `reports/` mevcut.
-- Canlı sunum: `presentations/Akromegali_Canli_Sunum.ipynb` mevcut.
-- Statik PDF: sohbet sırasında hazırlanmış olsa da **bu depoda henüz bulunmuyor**.
+- Sunum biçimi: yalnızca `presentations/Akromegali_Mortalite_Sunum.pdf` hedefleniyor; PDF **henüz yüklenmedi**. Eski canlı sunum kaldırıldı.
 - Tekrar üretilebilirlik: özgün yerel ortamda sonuçlar kontrol edilmiştir; bağımsız temiz bilgisayarda uçtan uca çalıştırma henüz doğrulanmamıştır.
 - Gizlilik: herkese açık sağlık verisi paylaşım yetkisi ve kimlik gizleme gözden geçirilmelidir.
