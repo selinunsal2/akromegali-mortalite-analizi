@@ -4,7 +4,7 @@
 
 ## Proje özeti
 
-Bu projede akromegali hastalarına ait veri seti üzerinde keşifsel analiz, veri kalite kontrolleri, sınıflandırma, test değerlendirmesi ve tekrarlı çapraz doğrulama yapılmaktadır. **Hedef değişken:** `Alive` (0 = vefat, 1 = hayatta). Modelleme sırasında pozitif sınıf **vefat** olacak şekilde `(Alive == 0)` dönüştürülür; dolayısıyla precision, recall, F1, ROC-AUC ve PR-AUC yorumlarında pozitif olay vefattır.
+Bu projede akromegali hastalarına ait veri seti üzerinde keşifsel analiz, veri kalite kontrolleri, sınıflandırma, test değerlendirmesi ve tekrarlı çapraz doğrulama yapılmaktadır. **Asıl ve referans çalışma `Akromegali_Modelleme.ipynb` dosyasıdır**; tablolar bu Notebook'un çıktıları ve aynı deneylere ait `experiment_1.csv` ile karşılaştırılmıştır. Veri seti Notebook çıktısında **607 satır / 61 değişken**, eğitim bölümü **485**, test bölümü **122** kayıt olarak görünmektedir (testte 10 vefat). **Hedef değişken:** `Alive` (0 = vefat, 1 = hayatta). Modelleme sırasında pozitif sınıf **vefat** olacak şekilde `(Alive == 0)` dönüştürülür; dolayısıyla precision, recall, F1, ROC-AUC ve PR-AUC yorumlarında pozitif olay vefattır.
 
 Kullanılan girdiler: `Age_in_Diagnosis`, `Gender`, `Preop_GH`, `Preop_IGF_1`, `Preop_Tm_Size_MAX_mm`. Ana çalışma, **DummyClassifier**, **Logistic Regression** ve **Random Forest** modellerini karşılaştırır. Sayısal özellikler için eksik değer doldurma, lojistik regresyonda ölçekleme ve kategorik değişkenlerde OneHotEncoder kullanılır. Ön işleme adımları model pipeline'larının içindedir.
 
@@ -72,8 +72,8 @@ MLflow kullanmak için bkz. [MLFLOW.md](MLFLOW.md). **`experiment_1.csv` bir son
 - Betikte ayrılmış test kümesi oranı %20, rastgele tohum 42'dir; sınıf oranları korunarak bölme yapılır.
 - Tekrarlı çapraz doğrulama eğitim bölümünde 5 kat × 5 tekrar üzerinden yapılır. Ön işleme pipeline içinde yeniden öğrenilir.
 - MLflow CSV dosyası önceden kaydedilmiş sonuçları gösterir. Yeni çalıştırmalarda kütüphane sürümü veya veriler değişirse sayılar farklılaşabilir.
-- Notebook çıktısında MLflow'un `skops` serileştirmesi sırasında `numpy.dtype` için **untrusted types** hatası görülmektedir. Bu nedenle bütün eğitilmiş model artifact'lerinin başarılı biçimde kaydedildiği varsayılmamalıdır; mevcut run metrikleri ayrı olarak mevcuttur.
-- Repo'nun mevcut haliyle sonuçların birebir yeniden üretildiği bağımsız bir ortamda doğrulanmamıştır.
+- Notebook'ta ilk MLflow model kaydetme denemelerinde `skops` / `numpy.dtype` kaynaklı **untrusted types** hatası görülmüştür. **Sonraki hücrelerde Logistic Regression ve Random Forest için başarılı model kaydetme mesajları ve `models:/...` URI'leri vardır.** Bunlar yerel sunucudan dönen kayıt mesajlarıdır; model artifact'lerinin GitHub'dan erişilebilirliği ayrıca doğrulanmış değildir.
+- Ana Notebook'ta Random Forest tahminlerinin tekrar kontrolünde **farklı tahmin edilen hasta sayısı 0** ve yeniden hesaplanan test metriklerinin eşleştiği kaydedilmiştir. Bununla birlikte repo'nun temiz ve bağımsız bir ortamda baştan sona çalıştırıldığı doğrulanmamıştır.
 
 ## Veri güvenliği ve etik
 
