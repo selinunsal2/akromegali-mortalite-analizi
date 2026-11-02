@@ -25,7 +25,7 @@ Ardından tarayıcıda `http://127.0.0.1:5000` adresini açın. Bu komut **yaln�
 
 ## Bilinen hata
 
-Ana Notebook'un saklanan çıktılarından birinde `mlflow.sklearn.log_model` çağrısı, skops tarafından güvenilmeyen `numpy.dtype` türü sebebiyle hata vermiştir. Bu, ilgili run metriklerinin bulunması ile bütün model dosyalarının başarıyla saklanmasının aynı şey olmadığını gösterir. Güvenilmeyen türleri otomatik olarak izinli hale getirmeden önce kaynağı inceleyin; sadece güvenilir modelleri yükleyin.
+Ana Notebook'ta `mlflow.sklearn.log_model` ilk denemelerde skops tarafından güvenilmeyen `numpy.dtype` türü sebebiyle hata vermiştir. **Ardından yapılan kayıt işlemlerinde Logistic Regression ve Random Forest için başarı mesajı ve `models:/...` URI'leri gözlenmiştir.** Bu nedenle başlangıçtaki hatayı son durum olarak yorumlamamak gerekir. Yerel arayüz model kayıtlarının doğrulanması için asıl kaynak olmaya devam eder; GitHub üzerinde model artifact dosyaları paylaşılmamıştır. Güvenilmeyen türleri otomatik olarak izinli hale getirmeden önce kaynağı inceleyin; sadece güvenilir modelleri yükleyin.
 
 ## Yeniden çalıştırma
 
