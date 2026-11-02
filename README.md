@@ -4,13 +4,13 @@
 
 ## Proje özeti
 
-Bu projede akromegali hastalarına ait veri seti üzerinde keşifsel analiz, veri kalite kontrolleri, sınıflandırma, test değerlendirmesi ve tekrarlı çapraz doğrulama yapılmaktadır. **Asıl ve referans çalışma `Akromegali_Modelleme.ipynb` dosyasıdır**; tablolar bu Notebook'un çıktıları ve aynı deneylere ait `experiment_1.csv` ile karşılaştırılmıştır. Veri seti Notebook çıktısında **607 satır / 61 değişken**, eğitim bölümü **485**, test bölümü **122** kayıt olarak görünmektedir (testte 10 vefat). **Hedef değişken:** `Alive` (0 = vefat, 1 = hayatta). Modelleme sırasında pozitif sınıf **vefat** olacak şekilde `(Alive == 0)` dönüştürülür; dolayısıyla precision, recall, F1, ROC-AUC ve PR-AUC yorumlarında pozitif olay vefattır.
+Bu projede akromegali hastalarına ait veri seti üzerinde keşifsel analiz, veri kalite kontrolleri, sınıflandırma, test değerlendirmesi ve tekrarlı çapraz doğrulama yapılmaktadır. **Asıl ve referans çalışma `Akromegali_Modelleme.ipynb` dosyasıdır**; tablolar bu Notebook'un çıktıları ve aynı deneylere ait `all_experiments.csv` ile karşılaştırılmıştır. Veri seti Notebook çıktısında **607 satır / 61 değişken**, eğitim bölümü **485**, test bölümü **122** kayıt olarak görünmektedir (testte 10 vefat). **Hedef değişken:** `Alive` (0 = vefat, 1 = hayatta). Modelleme sırasında pozitif sınıf **vefat** olacak şekilde `(Alive == 0)` dönüştürülür; dolayısıyla precision, recall, F1, ROC-AUC ve PR-AUC yorumlarında pozitif olay vefattır.
 
 Kullanılan girdiler: `Age_in_Diagnosis`, `Gender`, `Preop_GH`, `Preop_IGF_1`, `Preop_Tm_Size_MAX_mm`. Ana çalışma, **DummyClassifier**, **Logistic Regression** ve **Random Forest** modellerini karşılaştırır. Sayısal özellikler için eksik değer doldurma, lojistik regresyonda ölçekleme ve kategorik değişkenlerde OneHotEncoder kullanılır. Ön işleme adımları model pipeline'larının içindedir.
 
 ## Kaydedilmiş sonuçlar
 
-Aşağıdaki değerler repository'deki **`experiment_1.csv` MLflow dışa aktarımından** alınmıştır; yeniden hesaplanmış veya değiştirilmiş değildir.
+Aşağıdaki değerler repository'deki **`all_experiments.csv` MLflow dışa aktarımından** alınmıştır; yeniden hesaplanmış veya değiştirilmiş değildir.
 
 ### Ayrılmış test kümesi (%20)
 
@@ -37,7 +37,7 @@ Aşağıdaki değerler repository'deki **`experiment_1.csv` MLflow dışa aktar�
 | `Akromegali_Modelleme.ipynb` | Ana Jupyter Notebook, analiz ve kaydedilmiş çıktılar |
 | `akromegali_alistirma.csv` | Projede kullanılan veri dosyası |
 | `run_project.py` | Komut satırından yeniden çalıştırma ve rapor üretimi |
-| `experiment_1.csv` | MLflow dışa aktarılmış 6 run: 3 test + 3 çapraz doğrulama |
+| `all_experiments.csv` | MLflow dışa aktarılmış 6 run: 3 test + 3 çapraz doğrulama |
 | `requirements.txt` | Gerekli Python paketleri |
 | `MLFLOW.md` | MLflow'un başlatılması, deneylerin anlamı ve sınırlamalar |
 | `.gitignore` | Yerel / geçici dosyalar için ignore kuralları |
@@ -73,7 +73,7 @@ Sunumun teslim formatı **PDF** olarak belirlendi. Güncellenmiş kapak sayfası
 
 Yöntem ve veri kalite kontrolleri: [Tekrar üretilebilirlik notları](docs/reproducibility.md). Karşılaştırma tabloları: [CV metrikleri](reports/cv_summary_from_mlflow.csv) ve [test metrikleri](reports/test_summary_from_mlflow.csv).
 
-MLflow kullanmak için bkz. [MLFLOW.md](MLFLOW.md). **`experiment_1.csv` bir sonuç dışa aktarımıdır; sunucu veritabanı ya da eğitilmiş model dosyası değildir.**
+MLflow kullanmak için bkz. [MLFLOW.md](MLFLOW.md). **`all_experiments.csv` bir sonuç dışa aktarımıdır; sunucu veritabanı ya da eğitilmiş model dosyası değildir.**
 
 ## Yöntem ve yeniden üretilebilirlik notları
 
@@ -94,7 +94,7 @@ Sağlık verileri hassastır. Repository herkese açıksa kaynak veri, dışa ak
 ## Teslim öncesi son kontrol (2026-11-02)
 
 - Çalıştırılabilir analiz: `run_project.py` ve `Akromegali_Modelleme.ipynb` depoda mevcut.
-- Veri / kaydedilmiş deney özeti: `akromegali_alistirma.csv`, `experiment_1.csv` ve `reports/` mevcut.
+- Veri / kaydedilmiş deney özeti: `akromegali_alistirma.csv`, `all_experiments.csv` ve `reports/` mevcut.
 - Sunum: güncellenmiş `presentations/Akromegali_Mortalite_Sunum.pdf` yüklendi; eski canlı sunum kaldırıldı.
 - Tekrar üretilebilirlik: özgün yerel ortamda sonuçlar kontrol edilmiştir; bağımsız temiz bilgisayarda uçtan uca çalıştırma henüz doğrulanmamıştır.
 - Gizlilik: herkese açık sağlık verisi paylaşım yetkisi ve kimlik gizleme gözden geçirilmelidir.
