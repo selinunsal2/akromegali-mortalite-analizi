@@ -44,6 +44,9 @@ Ayrılan test seti: **122 hasta (10 vefat)**; eğitim seti: **485 hasta (41 vefa
 ├── run_project.py               # Tek komutla tekrar çalıştırılabilir script
 ├── akromegali_alistirma.csv     # Akademik çalışma verisi
 ├── experiment_1.csv             # MLflow deney özetinin arşiv kaydı
+├── reports/
+│   ├── cv_summary_from_mlflow.csv
+│   └── test_summary_from_mlflow.csv
 └── docs/
     └── reproducibility.md      # Yöntem, veri sözleşmesi ve tekrar üretme notları
 ```
@@ -80,6 +83,8 @@ Jupyter üzerinden etkileşimli analiz için `Akromegali_Modelleme.ipynb` dosyas
 - Modeller: çoğunluk sınıfı Dummy; dengeli sınıf ağırlıklı lojistik regresyon; 200 ağaçlı, maksimum derinliği 5 olan dengeli Random Forest.
 - Tekrar çalıştırma Python ve kütüphane sürümleriyle ilişkili olabilir. Deney sırasında: scikit-learn 1.9.1, pandas 3.1.0, NumPy 2.4.6, MLflow 3.17.2.
 - Kayıtlı `experiment_1.csv`, geçmiş bir MLflow dışa aktarımıdır; **scriptin güncel çıktılarının yerine geçmez**.
+
+Özet tablolar: [CV sonuçları](reports/cv_summary_from_mlflow.csv) · [Test sonuçları](reports/test_summary_from_mlflow.csv). Bunlar mevcut MLflow CSV arşivindeki kayıtların okunabilir kopyalarıdır ve yeni bir deney yerine geçmez.
 
 Ayrıntılı açıklama: [Tekrar üretilebilirlik ve sınırlılıklar](docs/reproducibility.md).
 
