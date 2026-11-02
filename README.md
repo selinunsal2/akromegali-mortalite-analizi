@@ -41,6 +41,11 @@ Aşağıdaki değerler repository'deki **`experiment_1.csv` MLflow dışa aktar�
 | `requirements.txt` | Gerekli Python paketleri |
 | `MLFLOW.md` | MLflow'un başlatılması, deneylerin anlamı ve sınırlamalar |
 | `.gitignore` | Yerel / geçici dosyalar için ignore kuralları |
+| `global_feature_importance.png` | Lojistik regresyon genel katsayı görseli |
+| `model_comparison_cv.png` | Tekrarlı CV model karşılaştırma görseli |
+| `presentations/Akromegali_Canli_Sunum.ipynb` | 12 slaytlık, çalıştırılabilir JupyterLab sunumu |
+| `presentations/README.md` | RISE / HTML dışa aktarma ve PDF durumu |
+
 | `docs/reproducibility.md` | Veri sözleşmesi, veri sızıntısı ve metot sınırları |
 | `reports/cv_summary_from_mlflow.csv` | Kaydedilmiş tekrar CV metrikleri (MLflow özetinden) |
 | `reports/test_summary_from_mlflow.csv` | Kaydedilmiş test metrikleri (MLflow özetinden) |
@@ -63,6 +68,10 @@ python run_project.py --no-mlflow
 
 Bu komut `results/` klasörüne analiz çıktıları üretir. Notebook'u incelemek için `jupyter notebook` komutunu çalıştırıp `Akromegali_Modelleme.ipynb` dosyasını açın. Notebook'un bazı hücreleri önceden oluşturulmuş çıktılar veya çalışan yerel MLflow sunucusu gerektirebilir; bütün hücrelerin temiz ortamda baştan sona çalıştığı henüz doğrulanmamıştır.
 
+Sunum için [çalıştırılabilir 12 slaytlık Jupyter Notebook](presentations/Akromegali_Canli_Sunum.ipynb) ve [sunum kullanım notları](presentations/README.md) mevcuttur. **Sabit PDF dosyası henüz GitHub'a yüklenmemiştir**; yüklenene kadar tam teslim paketinde varmış gibi gösterilmemelidir.
+
+**Grafikler:** [Tekrarlı CV karşılaştırması](model_comparison_cv.png) · [Global feature importance](global_feature_importance.png).
+
 Yöntem ve veri kalite kontrolleri: [Tekrar üretilebilirlik notları](docs/reproducibility.md). Karşılaştırma tabloları: [CV metrikleri](reports/cv_summary_from_mlflow.csv) ve [test metrikleri](reports/test_summary_from_mlflow.csv).
 
 MLflow kullanmak için bkz. [MLFLOW.md](MLFLOW.md). **`experiment_1.csv` bir sonuç dışa aktarımıdır; sunucu veritabanı ya da eğitilmiş model dosyası değildir.**
@@ -82,3 +91,12 @@ Sağlık verileri hassastır. Repository herkese açıksa kaynak veri, dışa ak
 ## Kapsam
 
 **Akademik ön çalışma · Python · scikit-learn · Jupyter Notebook · MLflow**
+
+## Teslim öncesi son kontrol (2026-11-02)
+
+- Çalıştırılabilir analiz: `run_project.py` ve `Akromegali_Modelleme.ipynb` depoda mevcut.
+- Veri / kaydedilmiş deney özeti: `akromegali_alistirma.csv`, `experiment_1.csv` ve `reports/` mevcut.
+- Canlı sunum: `presentations/Akromegali_Canli_Sunum.ipynb` mevcut.
+- Statik PDF: sohbet sırasında hazırlanmış olsa da **bu depoda henüz bulunmuyor**.
+- Tekrar üretilebilirlik: özgün yerel ortamda sonuçlar kontrol edilmiştir; bağımsız temiz bilgisayarda uçtan uca çalıştırma henüz doğrulanmamıştır.
+- Gizlilik: herkese açık sağlık verisi paylaşım yetkisi ve kimlik gizleme gözden geçirilmelidir.
