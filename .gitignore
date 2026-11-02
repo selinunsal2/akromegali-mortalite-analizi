@@ -1,0 +1,15 @@
+# Python / Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+# Local MLflow database and artifacts
+mlflow.db
+mlflow.db-*
+mlruns/
+mlartifacts/
+# Generated outputs (do not erase tracked files)
+results/
+.DS_Store
