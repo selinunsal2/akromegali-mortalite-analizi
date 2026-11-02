@@ -1,6 +1,6 @@
 # MLflow deney takibi
 
-Bu projedeki `experiment_1.csv` dosyası MLflow arayüzünden dışa aktarılmış **6 run** içerir: DummyClassifier, LogisticRegression ve RandomForest modellerinin birer test ve birer RepeatedStratifiedKFold deneyi.
+Bu projedeki `all_experiments.csv` dosyası MLflow arayüzünden dışa aktarılmış **6 run** içerir: DummyClassifier, LogisticRegression ve RandomForest modellerinin birer test ve birer RepeatedStratifiedKFold deneyi.
 
 ## Yerel MLflow'u açmak (Windows / Anaconda)
 
@@ -14,7 +14,7 @@ python -m mlflow server --backend-store-uri sqlite:///mlflow.db --port 5000
 
 Ardından tarayıcıda `http://127.0.0.1:5000` adresini açın. Bu komut **yalnızca yerel dizinde özgün `mlflow.db` mevcutsa** kayıtlı deneylere erişir. Sunucu açık kaldığı sürece arayüze erişilebilir.
 
-Önemli: GitHub'a yüklenen `experiment_1.csv`, **MLflow sunucusunun kendisi veya `mlflow.db` dosyası değildir**. Başka bir bilgisayar yalnızca CSV ile aynı MLflow arayüzünü yeniden oluşturamaz. `mlartifacts/` klasörü de bu repository'de yer almıyor; dolayısıyla model artifact'lerinin erişilebilirliği buradan doğrulanamaz.
+Önemli: GitHub'a yüklenen `all_experiments.csv`, **MLflow sunucusunun kendisi veya `mlflow.db` dosyası değildir**. Başka bir bilgisayar yalnızca CSV ile aynı MLflow arayüzünü yeniden oluşturamaz. `mlartifacts/` klasörü de bu repository'de yer almıyor; dolayısıyla model artifact'lerinin erişilebilirliği buradan doğrulanamaz.
 
 ## Deneylerin yorumlanması
 
